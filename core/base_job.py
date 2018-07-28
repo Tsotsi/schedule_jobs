@@ -12,7 +12,6 @@ class BaseJob(object):
 
     def __init__(self, logger: logging.Logger):
         self._logger = logger
-        print(self._logger)
 
     @abc.abstractmethod
     def run(self):
@@ -27,7 +26,7 @@ class BaseJob(object):
         返回计划执行时间
         :return:
         """
-        return schedule.every(10).seconds.do
+        return schedule.every(60).seconds.do
 
     @property
     def logger(self):
